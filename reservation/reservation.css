@@ -1,0 +1,89 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f9f6f2;
+    margin: 0;
+  }
+  
+  .reservation-wrapper {
+    max-width: 800px;
+    margin: 80px auto;
+    margin-top: 150px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 0.5rem;
+  }
+  
+  input, select {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+  }
+  
+  .time-label {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+  
+  .time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .time-btn {
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .time-btn.selected {
+    background: #444;
+    color: #fff;
+  }
+  
+  .submit-btn {
+    background: #444;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
