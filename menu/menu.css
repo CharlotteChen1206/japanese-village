@@ -126,4 +126,40 @@ body {
     font-weight: normal;
     white-space: nowrap;
   }
+
+@media (max-width: 768px) {
+  .menu-container {
+    margin-top: 0;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .menu-image {
+    position: relative;
+    height: 200px;
+  }
+
+  .menu-image img {
+    height: 100%;
+  }
+
+  .menu-content {
+    padding: 2rem 1rem;
+    height: auto;
+  }
+
+  .menu-tabs {
+    flex-wrap: wrap;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-price {
+    margin-top: 0.5rem;
+  }
+}
+
   

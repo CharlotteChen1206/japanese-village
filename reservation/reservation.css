@@ -87,4 +87,18 @@
     align-self: flex-start;
   }
 
-  
+@media (max-width: 768px) {
+  .reservation-wrapper {
+    margin: 50px 1rem 2rem;
+    padding: 0 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .submit-btn {
+    align-self: stretch;
+    width: 100%;
+  }
+}
