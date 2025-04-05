@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>Admin - Reservations</title>
   <link rel="stylesheet" href="admin.css">
+  
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("access") !== "letmein") {
+    document.write(`<h2>Access denied</h2>`);
+    throw new Error("Access denied"); // 防止下方 JS 繼續執行
+  }
+</script>
+
 </head>
 <body>
   <h1>Reservation Admin Panel</h1>
@@ -12,4 +21,7 @@
   <!-- Firebase & Firestore -->
   <script type="module" src="admin.js"></script>
 </body>
+
+
+
 </html>

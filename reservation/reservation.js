@@ -19,8 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const timeSelect = form.time;
   const guestInput = form.guests;
   const emailInput = form.email;
+  const nameInput = form.name;
   const timeGrid = document.getElementById("time-grid");
-  
+
   emailjs.init("juvgyVYGkbUG2B2AH");
 
   const today = new Date().toISOString().split("T")[0]; // ✅ 先定義 today
@@ -113,7 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Email 通知
     emailjs.send("service_3rj34j7", "template_dlex4ao", {
-      to_name: "Customer",
+      to_name: nameInput.value,
+      email: emailInput.value, 
       time: data.time,
       date: data.date,
       guests: data.guests
@@ -121,10 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("🎉 Your reservation was successfully submitted and email has been sent!");
     }).catch(error => {
       console.error("Email send failed:", error);
-      alert("Reservation saved, but failed to send email.");
+      alert("❌ Reservation saved, but failed to send email.");
     });
 
     form.reset();
-    fetchReservedTimes(dateStr).then(reserved => renderTimeButtons(reserved));
+document.querySelectorAll(".time-btn").forEach(b => b.classList.remove("selected"));
+timeSelect.value = "";
   });
+  
 });

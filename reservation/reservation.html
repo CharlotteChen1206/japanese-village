@@ -26,7 +26,13 @@
     <h1>BOOK A TABLE</h1>
 
     <form id="reservation-form" class="reservation-form">
+
       <div class="form-row">
+
+        <label>Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        
         <label>Number of Guests
           <select name="guests" required>
             <option value="1">1</option>
@@ -44,6 +50,8 @@
             <input type="email" name="email" placeholder="Your email" required />
         </label>
       </div>
+
+      <input type="hidden" name="time" />
 
       <p class="time-label">Please choose an available time slot.</p>
       <div class="time-grid" id="time-grid">
