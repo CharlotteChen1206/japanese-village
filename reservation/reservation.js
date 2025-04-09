@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const times = [];
-  for (let h = 8; h <= 22; h++) {
-    for (let m of [0, 15, 30, 45]) {
+  for (let h =17; h <= 20; h++) {
+    for (let m of [0, 30]) {
       let label = `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}`;
       let display = new Date(`2020-01-01T${label}:00`).toLocaleTimeString("en-US", { hour: 'numeric', minute: '2-digit' });
       times.push({ value: label.replace(":", ""), label: display });
