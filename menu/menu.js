@@ -2,7 +2,7 @@ let currentSection = 'dinner';
 let menuData = {};
 
 // 載入 JSON 資料
-fetch('menu.json')
+fetch('menu/menu.json')
   .then(res => res.json())
   .then(data => {
     menuData = data;

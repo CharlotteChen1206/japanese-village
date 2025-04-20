@@ -5,27 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reservation - Japanese Village</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="reservation.css" />
+  <link rel="stylesheet" href="reservation/reservation.css" />
+  <script defer type="module" src="reservation/reservation.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
   
 </head>
 
 <body>
-  <header>
-    <div class="logo-title">
-      <img src="../assets/logo.png" alt="Logo" class="logo" />
-      <h1>JAPANESE VILLAGE</h1>
-    </div>
-  
-    <button class="hamburger" id="hamburger">
-      &#9776;
-    </button>
-  
-    <nav class="vertical-nav" id="nav-menu">
-      <a href="../index.html">HOME</a>
-      <a href="../menu/menu.html">MENU</a>
-      <a href="reservation.html">BOOK A TABLE</a>
-    </nav>
-  </header>
+
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
 
   <main class="reservation-wrapper">
     <h1>BOOK A TABLE</h1>
@@ -43,7 +40,7 @@
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4+">4</option>
+            <option value="4+">4+</option>
           </select>
         </label>
 
@@ -67,27 +64,22 @@
     </form>
   </main>
 
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+      // 👇 Add this part to update the year AFTER footer is loaded
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })
+    .catch(error => console.error('Error loading footer:', error));
+  </script>
 
-  <footer>
-    <div>
-      <h3>House of Japanese Cuisine</h3>
-      <h2>JAPANESE VILLAGE</h2>
-      <p>
-        A: 317 10 Ave SW, Calgary, AB T2R 0A5<br />
-        T: 403-262-2738
-      </p>
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html">HOME</a>
-      <a href="../menu/menu.html">MENU</a>
-      <a href="../reservation/reservation.html">BOOK A TABLE</a>
-    </nav>
-    <p class="copyright">© 2025 by Japanese Village.</p>
-  </footer>
 
-  <script type="module" src="reservation.js"></script>
-  <script src="../script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
 
 </body>
 </html>

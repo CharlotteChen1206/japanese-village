@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Japanese Village</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="logo-title">
-      <img src="assets/logo.png" alt="Logo" class="logo" />
-      <h1>JAPANESE VILLAGE</h1>
-    </div>
-  
-    <button class="hamburger" id="hamburger">
-      &#9776;
-    </button>
-  
-    <nav class="vertical-nav" id="nav-menu">
-      <a href="index.html">HOME</a>
-      <a href="menu/menu.html">MENU</a>
-      <a href="reservation/reservation.html">BOOK A TABLE</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Japanese Village</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
 
-  <section class="hero">
-    <video autoplay muted loop>
-      <source src="assets/hero.mp4" type="video/mp4" />
-    </video>
-  </section>
+    <div id="navbar-placeholder"></div>
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    </script>
 
-  <section class="menu-intro">
-    <h2>OUR MENU</h2>
-    <p>
-      From sizzling teppanyaki dishes prepared right before your eyes to fresh sushi and traditional Japanese favorites, our menu offers something for everyone. Whether you're celebrating a special occasion or enjoying a casual night out, experience the taste of Japan with every bite.
-    </p>
-    <a href="menu/menu.html">EXPLORE MENU</a>
-  </section>
+    <section class="hero">
+      <video autoplay muted loop>
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+    </section>
 
-  <section class="video-grid">
-    <img src="assets/homeimg1.jpg" alt="" class="video-grid-item" />
-    <img src="assets/homeimg2.jpg" alt="" class="video-grid-item"/>
-  </section>
-
-  <section class="experience">
-    <h2>AN ELEGANCE JAPANESE DINING EXPERIENCE</h2>
-    <p>
-      At Japanese Village, tradition meets artistry in an immersive culinary journey. Indulge in the refined flavors of authentic Japanese cuisine, masterfully prepared by our teppanyaki chefs before your eyes. From the freshest ingredients to impeccable service, every moment is crafted to delight your senses.
-    </p>
-  </section>
-
-  <footer>
-    <div>
-      <h3>House of Japanese Cuisine</h3>
-      <h2>JAPANESE VILLAGE</h2>
+    <section class="menu-intro">
+      <h2>OUR MENU</h2>
       <p>
-        A: 317 10 Ave SW, Calgary, AB T2R 0A5<br />
-        T: 403-262-2738
+        From sizzling teppanyaki dishes prepared right before your eyes to fresh sushi and traditional Japanese favorites, our menu offers something for everyone. Whether you're celebrating a special occasion or enjoying a casual night out, experience the taste of Japan with every bite.
       </p>
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html">HOME</a>
-      <a href="menu/menu.html">MENU</a>
-      <a href="reservation/reservation.html">BOOK A TABLE</a>
-    </nav>
-    <p class="copyright">© 2025 by Japanese Village.</p>
-  </footer>
+      <a href="menu.html">EXPLORE MENU</a>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <section class="video-grid">
+      <img src="assets/homeimg1.jpg" alt="" class="video-grid-item" />
+      <img src="assets/homeimg2.jpg" alt="" class="video-grid-item"/>
+    </section>
+
+    <section class="experience">
+      <h2>AN ELEGANT JAPANESE DINING EXPERIENCE</h2>
+      <p>
+        At Japanese Village, tradition meets artistry in an immersive culinary journey. Indulge in the refined flavors of authentic Japanese cuisine, masterfully prepared by our teppanyaki chefs before your eyes. From the freshest ingredients to impeccable service, every moment is crafted to delight your senses.
+      </p>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        // 👇 Add this part to update the year AFTER footer is loaded
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+      })
+      .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+  </body>
 </html>
