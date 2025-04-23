@@ -10,11 +10,15 @@
     background: #f9f6f2;
     margin: 0;
   }
+
+  main {
+    padding-top: 100px;
+  }
   
   .reservation-wrapper {
     max-width: 800px;
     margin: 80px auto;
-    margin-top: 150px;
+    /* margin-top: 1000px; */
   }
   
   .reservation-wrapper h1 {
@@ -88,9 +92,11 @@
   }
 
 @media (max-width: 768px) {
+
   .reservation-wrapper {
     margin: 50px 1rem 2rem;
     padding: 0 1rem;
+    padding-top: 100px
   }
 
   .form-row {
